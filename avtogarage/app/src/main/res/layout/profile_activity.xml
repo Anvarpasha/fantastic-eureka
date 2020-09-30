@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.anvarpasha.avtogarage.ui.profile.ProfileVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="0dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/coverImg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/blackrectangle" />
+
+        <ImageView
+            android:id="@+id/logoImg"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="115dp"
+            android:layout_marginBottom="28dp"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/profile_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/elipse"
+            android:contentDescription="TODO" />
+
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="116dp"
+            android:layout_marginEnd="117dp"
+            android:layout_marginBottom="25dp"
+            tools:text="Mercedes"
+            android:text="@{viewModel.properties.name}"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/oldPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/oldPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:ems="10"
+            android:hint="Old password"
+            android:inputType="textPassword|numberPassword"
+            android:padding="16dp"
+            android:textColor="#DE000000"
+            app:layout_constraintBottom_toTopOf="@+id/textinputlayout_profile2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinputlayout_profile2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="13dp"
+            android:autofillHints="newpassword"
+            android:hint="@string/new_password"
+            app:layout_constraintBottom_toTopOf="@+id/textinputlayout_profile1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/NewPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="passw1"
+                android:ems="5"
+                android:gravity="start"
+                android:background="@color/transparent"
+                android:inputType="numberPassword|textPassword"
+                android:padding="16dp"
+                android:strokeColor="#000000"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinputlayout_profile1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints="newpassword"
+            android:hint="@string/new_password"
+            app:layout_constraintBottom_toTopOf="@+id/remember_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/NewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="passw1"
+                android:background="@color/transparent"
+                android:ems="5"
+                android:gravity="start"
+                android:inputType="numberPassword|textPassword"
+                android:padding="16dp"
+                android:strokeColor="#000000"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/remember_btn"
+            android:layout_width="328dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/loginbtn1"
+            android:text="@string/remember"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:backgroundTint="@color/colorAccent"
+            app:cornerRadius="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/logout_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logout_btn"
+            android:layout_width="328dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/save_btn"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textColor="#E35141"
+            android:textSize="16sp"
+            app:backgroundTint="@color/creme"
+            app:cornerRadius="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

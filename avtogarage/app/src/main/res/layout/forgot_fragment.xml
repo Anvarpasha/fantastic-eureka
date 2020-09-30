@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.anvarpasha.avtogarage.ui.auth.forgotPass.ForgotVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recoverypass_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/tvRecovery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="53dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/recovery_password"
+            android:textColor="#212738"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvResetCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.166" />
+
+        <TextView
+            android:id="@+id/tvResetCode"
+            android:layout_width="310dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="74dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginBottom="35dp"
+            android:text="@string/reset_info"
+            android:textColor="#ACACAC"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="146dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxStrokeWidth="1dp"
+            android:autofillHints="code"
+            app:boxStrokeColor="@color/black_87"
+            android:textColor="@color/black_87"
+            android:hint="@string/code"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/codeEdt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="passw1"
+                android:background="@drawable/loginshape"
+                android:gravity="start"
+                android:padding="16dp"
+                android:strokeColor="#000000"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="223dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:autofillHints="password1"
+            android:hint="@string/new_password"
+            app:hintTextColor="@color/black_87"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/newPassEdt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="passw1"
+                android:background="@drawable/loginshape"
+                android:gravity="start"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:strokeColor="#000000"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="297dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:textColorHint="#7C7C7C"
+            app:layout_constraintBottom_toTopOf="@+id/btn_change_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/passEdt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="passwordlog3"
+                android:ems="5"
+                android:gravity="start"
+                android:hint="@string/change_password"
+                android:background="@drawable/loginshape"
+                android:inputType="textPassword|numberPassword"
+                android:padding="16dp"
+                android:strokeColor="#000000"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="51dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_change_password"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="377dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/loginbtn1"
+            android:onClick="@{ () -> viewModel.sendNewPassword(passEdt.getText().toString(),newPassEdt.getText().toString(),codeEdt.getText().toString())}"
+            android:text="@string/change_password"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:backgroundTint="@color/colorAccent"
+            app:cornerRadius="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
